@@ -1,4 +1,4 @@
-package com.example.firstcompose
+package com.example.firstcompose.presentation
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxHeight

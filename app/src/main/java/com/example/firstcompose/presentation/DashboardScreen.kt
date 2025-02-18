@@ -1,4 +1,4 @@
-package com.example.firstcompose
+package com.example.firstcompose.presentation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
