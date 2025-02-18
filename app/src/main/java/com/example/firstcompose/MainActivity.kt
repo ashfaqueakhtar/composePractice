@@ -30,110 +30,15 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.rememberNavController
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            /*FirstComposeTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android"
-                    )
-                }
-            }*/
-            //Greeting(name = "Android")
-            CircleImage()
+            AppRoutes()
         }
     }
-}
-
-@Composable
-fun Submit() {
-    Button(
-        onClick = {},
-        colors = ButtonDefaults.buttonColors(
-            contentColor = Color.Black,
-            disabledContainerColor = Color.White
-        )
-    ) {
-
-        Text(
-            text = "Submit",
-        )
-    }
-}
-
-@Composable
-fun PreviewFunction() {
-    Image(
-        painter = painterResource(R.drawable.ic_launcher_background),
-        contentDescription = "",
-        colorFilter = ColorFilter.tint(Color.Cyan),
-        contentScale = ContentScale.Crop
-    )
-}
-
-@Composable
-fun Greeting(name: String) {
-    Text(
-        text = "Hello $name!",
-        fontWeight = FontWeight.Bold,
-        fontSize = 20.sp,
-        color = Color.Blue,
-        textAlign = TextAlign.Center
-    )
-}
-
-@Composable
-fun InputField() {
-    val state = remember { mutableStateOf("") }
-    TextField(
-        value = state.value,
-        onValueChange = {
-            state.value = it
-        },
-        label = {
-            Text("Hint Text")
-        })
-}
-
-@Composable
-fun ColumnLayout() {
-    Column(
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Text("A")
-        Text("B")
-        Text("C")
-    }
-}// Similar is row
-
-@Composable
-fun BoxLayout() {// its like Relative or frame layout
-    Box(contentAlignment = Alignment.Center) {
-        Text("A")
-        Text("B")
-    }
-}
-
-@Composable
-fun CircleImage(){
-    Image(
-        painter = painterResource(R.drawable.profile2),
-        contentDescription = "",
-        contentScale = ContentScale.Crop,
-        modifier = Modifier.padding(10.dp).size(80.dp)
-            .clip(CircleShape)
-
-    )
-}
-
-@Preview(showBackground = true, widthDp = 200, heightDp = 200)
-@Composable
-fun GreetingPreview() {
-
-    CircleImage()
 }
