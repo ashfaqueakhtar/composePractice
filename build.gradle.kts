@@ -9,3 +9,10 @@ plugins {
     id("com.google.dagger.hilt.android") version "2.51.1" apply false
     //alias(libs.plugins.hiltAndroid) apply false
 }
+
+/*
+buildscript{
+    Hependencies {
+        classpath "com.google.dagger:hilt-android-gradle-plugin:2.40.5"
+    }
+}*/

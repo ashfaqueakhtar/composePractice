@@ -4,8 +4,9 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     /*alias(libs.plugins.kotlinAndroidKsp)
     alias(libs.plugins.hiltAndroid)*/
-    id("com.google.dagger.hilt.android")
-    alias(libs.plugins.kotlinAndroidKsp)
+    id("dagger.hilt.android.plugin")
+    id("kotlin-kapt")
+    //alias(libs.plugins.kotlinAndroidKsp)
     /*id("com.google.dagger.hilt.android")
     id("kotlin-kapt")*/
 }
@@ -37,6 +38,9 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+    /*composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.15"
+    }*/
     kotlinOptions {
         jvmTarget = "11"
     }
@@ -56,9 +60,13 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.navigation.compose)
 
+    //VM
+    implementation(libs.viewmodel.compose)
+
     // Hilt for DI
     implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
+    //ksp(libs.hilt.compiler)
+    kapt(libs.hilt.compiler)
     implementation(libs.hilt.navigation.compose)
 
     testImplementation(libs.junit)
